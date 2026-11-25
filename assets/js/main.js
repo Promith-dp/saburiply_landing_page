@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Google Apps Script Web App URL (Deploy → Web app → copy the /exec URL)
-  const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxLnWRR-Dy7B0qJt6bfsoLAQhPduwJcrC0Z5qJUlN7g-4q0mRXxpIW7AHKt2v8YDQKtEA/exec';
+  const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxKiac8s-gs6Rxhvvi2FgPh7cz94kAzagnBsddNRSaRozsnaj5zzet-78_a1jMOmCStig/exec';
 
   if (enquiryForm) {
     enquiryForm.addEventListener('submit', function (e) {
