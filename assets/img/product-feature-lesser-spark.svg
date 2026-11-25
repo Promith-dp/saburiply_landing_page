@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
+  <!-- Main Star (Left) -->
+  <path d="M 11.5 10 
+                   Q 13.6 15.4 19 17.5 
+                   Q 13.6 19.6 11.5 25 
+                   Q 9.4 19.6 4 17.5 
+                   Q 9.4 15.4 11.5 10 Z" 
+                stroke="#121212" stroke-width="1.35" stroke-linejoin="round" fill="none"/>
+  <!-- Red Accent Star (Top Right) -->
+  <path d="M 21.5 4.5 
+                   Q 22.9 8.1 26.5 9.5 
+                   Q 22.9 10.9 21.5 14.5 
+                   Q 20.1 10.9 16.5 9.5 
+                   Q 20.1 8.1 21.5 4.5 Z" 
+                stroke="#ce2425" stroke-width="1.3" stroke-linejoin="round" fill="none"/>
+  <!-- Small Star (Bottom Right) -->
+  <path d="M 23 17.7 
+                   Q 24.064 20.436 26.8 21.5 
+                   Q 24.064 22.564 23 25.3 
+                   Q 21.936 22.564 19.2 21.5 
+                   Q 21.936 20.436 23 17.7 Z" 
+                stroke="#121212" stroke-width="1.2" stroke-linejoin="round" fill="none"/>
+</svg>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You - Saburi Ply</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      --primary-red: #c82027;
+      --dark-red: #a5181e;
+      --text-dark: #1e1e1e;
+      --text-muted: #555555;
+      --bg-light: #f9f9f9;
+      --border-color: #e5e5e5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: url('assets/img/main-hero-banner.webp') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text-dark);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    /* Header */
+    header {
+      background-color: #ffffff;
+      padding: 16px 5%;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      gap: 10px;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 3px solid var(--primary-red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-red);
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      border-left: 2px solid var(--primary-red);
+      padding-left: 10px;
+    }
+
+    .logo-text span:first-child {
+      color: var(--primary-red);
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: 0.5px;
+    }
+
+    .logo-text span:last-child {
+      color: var(--text-dark);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+    }
+
+    .header-phone {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--primary-red);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+
+    .header-phone:hover {
+      background-color: var(--dark-red);
+    }
+
+    /* Main Thank You Section */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+    }
+
+    .thank-you-card {
+      background: rgba(255, 255, 255, 0.95);
+      max-width: 650px;
+      width: 100%;
+      padding: 50px 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+      text-align: center;
+      border-top: 5px solid var(--primary-red);
+    }
+
+    .check-circle {
+      width: 80px;
+      height: 80px;
+      background-color: rgba(200, 32, 39, 0.1);
+      color: var(--primary-red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+      margin: 0 auto 24px;
+      animation: scaleUp 0.5s ease-out;
+    }
+
+    @keyframes scaleUp {
+      0% {
+        transform: scale(0.6);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .thank-you-card h1 {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+
+    .thank-you-card h1 span {
+      color: var(--primary-red);
+    }
+
+    .thank-you-card p {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .info-box {
+      background-color: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-bottom: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      font-size: 14px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+
+    .info-item i {
+      color: var(--primary-red);
+    }
+
+    .thank-you-banner {
+      background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+      color: white;
+    }
+
+    .thank-you-banner h2 {
+      font-size: 22px;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .banner-logo {
+      height: 40px;
+      filter: brightness(0) invert(1);
+    }
+
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-red);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 13px 28px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--dark-red);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--text-dark);
+      border: 1.5px solid #cccccc;
+      text-decoration: none;
+      padding: 13px 28px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary-red);
+      color: var(--primary-red);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #161616;
+      color: #cccccc;
+      padding: 24px 5%;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    footer .footer-links {
+      margin-bottom: 10px;
+    }
+
+    footer a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      color: var(--primary-red);
+    }
+
+    @media (max-width: 576px) {
+      .thank-you-card {
+        padding: 36px 22px;
+      }
+      .thank-you-card h1 {
+        font-size: 26px;
+      }
+      .thank-you-banner h2 {
+        font-size: 18px;
+      }
+      .header-phone span {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Main Content -->
+  <main>
+    <div class="thank-you-card">
+      <div class="check-circle">
+        <i class="fa-solid fa-check"></i>
+      </div>
+
+      <h1>Thank You for <span>Choosing Saburi Ply!</span></h1>
+      <p class="thank-you-message">
+        We've received your enquiry and our team is already working on it. You'll hear from us shortly with the best solutions for your needs.
+      </p>
+
+      <div class="thank-you-banner">
+        <img src="assets/img/logo.webp" alt="Saburi Ply Logo" class="banner-logo">
+        <h2>Premium Quality Plywood Solutions</h2>
+      </div>
+
+      <div class="info-box">
+        <div class="info-item">
+          <i class="fa-solid fa-phone-volume"></i>
+          <span>1800 313 666 000</span>
+        </div>
+        <div class="info-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>info@saburiply.com</span>
+        </div>
+        <div class="info-item">
+          <i class="fa-regular fa-clock"></i>
+          <span>Mon - Sat: 10 AM - 8 PM</span>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <a href="index.html" class="btn-primary">
+          <i class="fa-solid fa-arrow-left"></i> Back to Home
+        </a>
+        <a href="#products" class="btn-outline">
+          <i class="fa-solid fa-box-open"></i> Download Catalogue
+        </a>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
