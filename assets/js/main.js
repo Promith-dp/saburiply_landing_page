@@ -158,28 +158,51 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Google Apps Script Web App URL (Deploy → Web app → copy the /exec URL)
+  const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxLnWRR-Dy7B0qJt6bfsoLAQhPduwJcrC0Z5qJUlN7g-4q0mRXxpIW7AHKt2v8YDQKtEA/exec';
+
   if (enquiryForm) {
     enquiryForm.addEventListener('submit', function (e) {
       e.preventDefault();
       const submitBtn = enquiryForm.querySelector('button[type="submit"]');
+      const originalBtnHTML = submitBtn ? submitBtn.innerHTML : '';
+
+      function showMessage(text, isError) {
+        if (feedbackToast) {
+          feedbackToast.textContent = text;
+          feedbackToast.style.display = 'block';
+          feedbackToast.style.color = isError ? '#c0392b' : '';
+        }
+      }
+
+      function resetButton() {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnHTML;
+        }
+      }
+
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.innerHTML = 'Submitting...';
       }
 
-      // Simulate network response
-      setTimeout(function () {
-        if (feedbackToast) {
-          feedbackToast.textContent = 'Thank you! Your enquiry has been received. Our executive will reach out to you shortly.';
-          feedbackToast.style.display = 'block';
-        }
-        enquiryForm.reset();
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = '<span>Submit Enquiry</span>';
-        }
-        setTimeout(closeModal, 2500);
-      }, 700);
+      const formData = new FormData(enquiryForm);
+      formData.append('page', window.location.href);
+
+      fetch(GOOGLE_SHEET_URL, { method: 'POST', body: formData })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          if (!data || data.result !== 'success') {
+            throw new Error((data && data.error) || 'Submission failed');
+          }
+          enquiryForm.reset();
+          window.location.href = 'thank-you.html';
+        })
+        .catch(function () {
+          showMessage('Sorry, something went wrong. Please try again or call us directly.', true);
+          resetButton();
+        });
     });
   }
 
